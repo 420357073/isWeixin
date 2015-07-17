@@ -26,31 +26,7 @@ public class LoginActivity extends Activity{
 		final EditText m_EditText2 = (EditText)findViewById(R.id.editText2);
 		
 		Button btn1 = (Button)findViewById(R.id.button1);
-		btn1.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				String str_name = m_EditText1.toString();
-				String str_password = m_EditText2.toString();
-				
-				BmobQuery<User> bmobQuery = new BmobQuery<User>();
-				bmobQuery.getObject(this, "6b6c11c537", new GetListener<Person>() {
-				    @Override
-				    public void onSuccess(Person object) {
-				        // TODO Auto-generated method stub
-				    	DisplayToast("查询成功");
-				    }
 
-				    @Override
-				    public void onFailure(int code, String msg) {
-				        // TODO Auto-generated method stub
-				    	DisplayToast("查询失败：" + msg);
-				    }
-				});
-				
-			}
-		});
 		
 			
 		//查询数据库 是否存在次用户，密码是否正确

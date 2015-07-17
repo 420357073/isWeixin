@@ -3,16 +3,20 @@ package com.example.isweixin;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity implements OnViewChangeListener, OnClickListener{
 	private MyScrollLayout mScrollLayout;	
@@ -21,7 +25,7 @@ public class MainActivity extends Activity implements OnViewChangeListener, OnCl
 	private int mCurSel;
 	private ImageView set;
 	private ImageView add;
-	
+	private ImageView addfriend;
 	private TextView liaotian;
 	private TextView faxian;
 	private TextView tongxunlu;
@@ -30,6 +34,10 @@ public class MainActivity extends Activity implements OnViewChangeListener, OnCl
 	
 	private ListView listview1;
 	private ListView listview2;
+	
+	
+	public final static String EXTRA_ID = "com.example.isweixin.ID";
+	public final static String EXTRA_NAME = "com.example.isweixin.NAME";
 	
 	//自定义的弹出框类
 	SelectPicPopupWindow menuWindow; //弹出框
@@ -50,12 +58,46 @@ public class MainActivity extends Activity implements OnViewChangeListener, OnCl
 		listview1 = (ListView)findViewById(R.id.listView1);
 		listview2 = (ListView)findViewById(R.id.listView2);
 		
-		HuihuaAdapter ha = new HuihuaAdapter(this,getHuahui());
+		final ArrayList<HuiHua> hl = getHuihua();
+		HuihuaAdapter ha = new HuihuaAdapter(this,hl);
 		listview1.setAdapter(ha);
+		listview1.setOnItemClickListener(new OnItemClickListener(){
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
+					long arg3) {
+				// TODO Auto-generated method stub
+				
+				Intent intent = new Intent(MainActivity.this, ChatActivity.class);
+				intent.putExtra(EXTRA_ID, hl.get(position).getWeixinID1());
+				intent.putExtra(EXTRA_NAME, hl.get(position).getName1());
+				startActivity(intent);
+				
+			}
+			
+		});
+		
 		listview1.setCacheColorHint(0);
 		
-		ContactAdapter hc = new ContactAdapter(this,getContact());
+		final ArrayList<ContactP> cl = getContact();
+		ContactAdapter hc = new ContactAdapter(this,cl);
 		listview2.setAdapter(hc);
+		listview2.setOnItemClickListener(new OnItemClickListener(){
+			
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
+					long arg3) {
+				// TODO Auto-generated method stub
+				
+				Toast.makeText(MainActivity.this, "this is No."+(position+1)+" item.", Toast.LENGTH_SHORT).show();
+				Intent intent = new Intent(MainActivity.this, ChatActivity.class);
+				intent.putExtra(EXTRA_ID, cl.get(position).getWeixinID());
+				intent.putExtra(EXTRA_NAME, cl.get(position).getName());
+				startActivity(intent);
+			}
+			
+		});
+		
 		listview2.setCacheColorHint(0);
 		
     	mScrollLayout = (MyScrollLayout) findViewById(R.id.ScrollLayout); 	
@@ -85,6 +127,14 @@ public class MainActivity extends Activity implements OnViewChangeListener, OnCl
     		@Override
     		public void onClick(View arg0) {
     			uploadImage2(MainActivity.this);
+    		}
+    	});
+    	
+    	addfriend.setOnClickListener(new View.OnClickListener() {
+    		@Override
+    		public void onClick(View arg0) {
+    			Intent intent = new Intent(MainActivity.this, AddFriendActivity.class);
+    			startActivity(intent);
     		}
     	});
     }
@@ -164,7 +214,7 @@ public class MainActivity extends Activity implements OnViewChangeListener, OnCl
 		
 		return hcList;
 	}
-	private ArrayList<HuiHua> getHuahui(){
+	private ArrayList<HuiHua> getHuihua(){
 		ArrayList<HuiHua> hhList = new ArrayList<HuiHua>();
 		HuiHua h1 = new HuiHua();
 		h1.setTxPath(R.drawable.icon+"");
