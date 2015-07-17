@@ -41,23 +41,23 @@
    			android:name="com.tencent.weibo.webview.OAuthV2AuthorizeWebView"
     		android:label="@string/app_name" >
         </activity>
-        
-        <activity
-   			android:name="com.example.isweixin.ChatActivity"
-   			android:windowSoftInputMode="adjustPan"
-    		android:label="聊天界面" >
-        </activity>
-        
        	<activity
    			android:name="com.example.isweixin.LoginActivity"
-   			android:windowSoftInputMode="adjustPan"
     		android:label="用户登录" >
         </activity>
        	<activity
    			android:name="com.example.isweixin.RegisterActivity"
-   			android:windowSoftInputMode="adjustPan"
     		android:label="用户注册" >
         </activity>        
+        <activity
+   			android:name="com.example.isweixin.AddFriendActivity"
+    		android:label="addfriend" >
+        </activity>  
+        <activity
+   			android:name="com.example.isweixin.ChatActivity"
+   			android:windowSoftInputMode="adjustPan"
+    		android:label="chat" >
+        </activity>  
     </application>
 
     

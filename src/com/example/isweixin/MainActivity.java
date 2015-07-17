@@ -25,19 +25,19 @@ public class MainActivity extends Activity implements OnViewChangeListener, OnCl
 	private int mCurSel;
 	private ImageView set;
 	private ImageView add;
-	private ImageView addfriend;
+	private ImageView addfriend;  // 添加好友
+	
 	private TextView liaotian;
 	private TextView faxian;
 	private TextView tongxunlu;
 	
 	private boolean isOpen = false;
+
+	public final static String EXTRA_ID = "com.example.isweixin.ID";
+	public final static String EXTRA_NAME = "com.example.isweixin.NAME";
 	
 	private ListView listview1;
 	private ListView listview2;
-	
-	
-	public final static String EXTRA_ID = "com.example.isweixin.ID";
-	public final static String EXTRA_NAME = "com.example.isweixin.NAME";
 	
 	//自定义的弹出框类
 	SelectPicPopupWindow menuWindow; //弹出框
@@ -76,9 +76,8 @@ public class MainActivity extends Activity implements OnViewChangeListener, OnCl
 			}
 			
 		});
-		
 		listview1.setCacheColorHint(0);
-		
+
 		final ArrayList<ContactP> cl = getContact();
 		ContactAdapter hc = new ContactAdapter(this,cl);
 		listview2.setAdapter(hc);
@@ -97,7 +96,7 @@ public class MainActivity extends Activity implements OnViewChangeListener, OnCl
 			}
 			
 		});
-		
+
 		listview2.setCacheColorHint(0);
 		
     	mScrollLayout = (MyScrollLayout) findViewById(R.id.ScrollLayout); 	
@@ -116,6 +115,7 @@ public class MainActivity extends Activity implements OnViewChangeListener, OnCl
     	
     	set = (ImageView)findViewById(R.id.set);
     	add = (ImageView)findViewById(R.id.add);
+    	addfriend = (ImageView)findViewById(R.id.addfriend);
     	
     	set.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -129,14 +129,16 @@ public class MainActivity extends Activity implements OnViewChangeListener, OnCl
     			uploadImage2(MainActivity.this);
     		}
     	});
-    	
     	addfriend.setOnClickListener(new View.OnClickListener() {
-    		@Override
-    		public void onClick(View arg0) {
-    			Intent intent = new Intent(MainActivity.this, AddFriendActivity.class);
-    			startActivity(intent);
-    		}
-    	});
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(MainActivity.this,AddFriendActivity.class);
+				startActivity(intent);
+				
+			}
+		});
     }
 	
 	private ArrayList<ContactP> getContact(){
@@ -144,6 +146,8 @@ public class MainActivity extends Activity implements OnViewChangeListener, OnCl
 		ContactP c0 = new ContactP();
 		c0.setTxPath(R.drawable.bind_mcontact_reco_friends+"");
 		c0.setName("服务号");
+		
+		
 		
 		ContactP c1 = new ContactP();
 		c1.setTxPath(R.drawable.brand_default_head+"");
