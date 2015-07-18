@@ -2,9 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:background="#ffffff">
+    android:background="@color/base_bg"
+    android:orientation="vertical"     >
     
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,8 +18,8 @@
             android:layout_height="39dp"
             android:layout_margin="10dp"
             android:layout_weight="1.0"
-            android:background="#33ffcc"
-            android:hint="用户名"
+            android:background="@drawable/button_normal_shape"
+            android:hint="@string/username"
             android:paddingLeft="5dp"
             android:singleLine="true"
             android:textColorHint="#b3b3b3"
@@ -25,30 +27,20 @@
 
         <Button
             android:id="@+id/btn_search"
-          
+            style="@style/Smile.TextView._White"
             android:layout_width="60dp"
             android:layout_height="39dp"
             android:layout_margin="10dp"
             android:layout_marginRight="11dp"
-            android:background="#000033"
-            android:text="搜索"
+            android:background="@drawable/btn_login_selector"
+            android:text="@string/search"
             android:textSize="14sp" />
     </LinearLayout>
 
     <ListView
         android:id="@+id/listView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        
-        android:dividerHeight="1dp"
-        android:fadingEdgeLength="0dp"
-        android:fastScrollEnabled="true"
-        android:paddingBottom="10dp"
-        
-         >
+        android:layout_height="wrap_content" >
     </ListView>
-    
-
-    
     
 </LinearLayout>

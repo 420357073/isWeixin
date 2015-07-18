@@ -761,9 +761,11 @@ public final class R {
     }
     public static final class id {
         public static final int ScrollLayout=0x7f0a0005;
-        public static final int action_settings=0x7f0a0033;
-        public static final int add=0x7f0a002b;
-        public static final int addfriend=0x7f0a002a;
+        public static final int action_settings=0x7f0a0035;
+        public static final int add=0x7f0a002d;
+        public static final int addfriend=0x7f0a002c;
+        public static final int avatar=0x7f0a0027;
+        public static final int btn_add=0x7f0a0028;
         public static final int btn_cancel=0x7f0a0011;
         public static final int btn_chat_add=0x7f0a001e;
         public static final int btn_chat_emo=0x7f0a001f;
@@ -780,7 +782,7 @@ public final class R {
         public static final int editText3=0x7f0a000f;
         public static final int edit_user_comment=0x7f0a0016;
         public static final int et_find_name=0x7f0a0000;
-        public static final int faxian=0x7f0a002f;
+        public static final int faxian=0x7f0a0031;
         public static final int friendName=0x7f0a0004;
         public static final int goBack=0x7f0a0003;
         public static final int l1=0x7f0a0021;
@@ -789,29 +791,29 @@ public final class R {
         public static final int layout_add=0x7f0a001d;
         public static final int layout_emo=0x7f0a001b;
         public static final int layout_more=0x7f0a001a;
-        public static final int liaotian=0x7f0a002e;
+        public static final int liaotian=0x7f0a0030;
         public static final int listView1=0x7f0a0002;
         public static final int listView2=0x7f0a000e;
-        public static final int list_item=0x7f0a0027;
+        public static final int list_item=0x7f0a0029;
         public static final int llayout=0x7f0a000d;
-        public static final int lllayout=0x7f0a002d;
+        public static final int lllayout=0x7f0a002f;
         public static final int name=0x7f0a0025;
         public static final int pager_emo=0x7f0a001c;
         public static final int pop_layout=0x7f0a0012;
         public static final int pop_layout2=0x7f0a0010;
-        public static final int qq_myview=0x7f0a0031;
-        public static final int qq_mywebview=0x7f0a0032;
-        public static final int set=0x7f0a002c;
+        public static final int qq_myview=0x7f0a0033;
+        public static final int qq_mywebview=0x7f0a0034;
+        public static final int set=0x7f0a002e;
         public static final int textView1=0x7f0a0006;
         public static final int textView2=0x7f0a000b;
         public static final int textView3=0x7f0a000c;
         public static final int time=0x7f0a0023;
-        public static final int tongxunlu=0x7f0a0030;
+        public static final int tongxunlu=0x7f0a0032;
         public static final int tv_camera=0x7f0a0014;
         public static final int tv_location=0x7f0a0015;
         public static final int tv_picture=0x7f0a0013;
-        public static final int tx1=0x7f0a0028;
-        public static final int tx2=0x7f0a0029;
+        public static final int tx1=0x7f0a002a;
+        public static final int tx2=0x7f0a002b;
     }
     public static final class layout {
         public static final int activity_addfriend=0x7f030000;
@@ -828,12 +830,13 @@ public final class R {
         public static final int include_chat_bottom_bar=0x7f03000b;
         public static final int index=0x7f03000c;
         public static final int liaotian=0x7f03000d;
-        public static final int listview_item=0x7f03000e;
-        public static final int tongxunlu=0x7f03000f;
-        public static final int top1=0x7f030010;
-        public static final int top2=0x7f030011;
-        public static final int top_chat=0x7f030012;
-        public static final int webview_qq=0x7f030013;
+        public static final int listitemlayout=0x7f03000e;
+        public static final int listview_item=0x7f03000f;
+        public static final int tongxunlu=0x7f030010;
+        public static final int top1=0x7f030011;
+        public static final int top2=0x7f030012;
+        public static final int top_chat=0x7f030013;
+        public static final int webview_qq=0x7f030014;
     }
     public static final class menu {
         public static final int main=0x7f090000;

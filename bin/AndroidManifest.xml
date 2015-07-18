@@ -49,10 +49,11 @@
    			android:name="com.example.isweixin.RegisterActivity"
     		android:label="用户注册" >
         </activity>        
-        <activity
+ 	    <activity
    			android:name="com.example.isweixin.AddFriendActivity"
     		android:label="addfriend" >
         </activity>  
+        
         <activity
    			android:name="com.example.isweixin.ChatActivity"
    			android:windowSoftInputMode="adjustPan"

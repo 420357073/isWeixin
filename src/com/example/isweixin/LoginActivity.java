@@ -85,6 +85,7 @@ public class LoginActivity extends Activity{
 					if(user.getPassword().toString().equals(password)){
 						Intent intent = new Intent(LoginActivity.this,MainActivity.class);
 						startActivity(intent);
+					//	DisplayToast(user.getPassword()+user.getUsername());
 					}
 				}
 				
