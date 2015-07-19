@@ -72,6 +72,7 @@ public class MainActivity extends Activity implements OnViewChangeListener, OnCl
 				intent.putExtra(EXTRA_ID, hl.get(position).getWeixinID1());
 				intent.putExtra(EXTRA_NAME, hl.get(position).getName1());
 				startActivity(intent);
+				finish();
 				
 			}
 			

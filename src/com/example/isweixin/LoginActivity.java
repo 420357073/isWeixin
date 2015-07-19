@@ -64,7 +64,8 @@ public class LoginActivity extends Activity{
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-				startActivity(intent);				
+				startActivity(intent);
+				finish();
 			}
 		});
 		
@@ -85,6 +86,7 @@ public class LoginActivity extends Activity{
 					if(user.getPassword().toString().equals(password)){
 						Intent intent = new Intent(LoginActivity.this,MainActivity.class);
 						startActivity(intent);
+						finish();
 					//	DisplayToast(user.getPassword()+user.getUsername());
 					}
 				}
