@@ -1,7 +1,13 @@
 package com.example.isweixin;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import cn.bmob.v3.BmobQuery;
+import cn.bmob.v3.listener.FindListener;
+
+import JavaBean.Relationship;
+import JavaBean.User;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
@@ -144,11 +150,40 @@ public class MainActivity extends Activity implements OnViewChangeListener, OnCl
 	
 	private ArrayList<ContactP> getContact(){
 		ArrayList<ContactP> hcList = new ArrayList<ContactP>();
+		/*
+		BmobQuery<Relationship> bmobQuery = new BmobQuery<Relationship>();
+		
+		bmobQuery.addWhereEqualTo("username", PublicData.username);
+		bmobQuery.setLimit(50);
+		
+		bmobQuery.findObjects(this, new FindListener<User>() {
+			
+			@Override
+			public void onSuccess(List<User> object) {
+				// TODO Auto-generated method stub
+				for(User user:object){
+					if(user.getPassword().toString().equals(password)){
+						Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+						PublicData.username = m_EditText1.getText().toString();
+						
+						startActivity(intent);
+					//	finish();
+					//	DisplayToast(user.getPassword()+user.getUsername());
+					}
+				}
+				
+			}
+			
+			@Override
+			public void onError(int arg0, String arg1) {
+				// TODO Auto-generated method stub
+				DisplayToast("fail!");
+			}
+		});
+		*/
 		ContactP c0 = new ContactP();
 		c0.setTxPath(R.drawable.bind_mcontact_reco_friends+"");
 		c0.setName("·þÎñºÅ");
-		
-		
 		
 		ContactP c1 = new ContactP();
 		c1.setTxPath(R.drawable.brand_default_head+"");
@@ -219,6 +254,44 @@ public class MainActivity extends Activity implements OnViewChangeListener, OnCl
 		
 		return hcList;
 	}
+	/*
+	public void Search(String name,final String password){
+		BmobQuery<User> bmobQuery = new BmobQuery<User>();
+		
+		bmobQuery.addWhereEqualTo("username", name);
+		bmobQuery.setLimit(50);
+		
+		bmobQuery.findObjects(this, new FindListener<User>() {
+			
+			@Override
+			public void onSuccess(List<User> object) {
+				// TODO Auto-generated method stub
+				for(User user:object){
+					if(user.getPassword().toString().equals(password)){
+						Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+						PublicData.username = m_EditText1.getText().toString();
+						
+						startActivity(intent);
+					//	finish();
+					//	DisplayToast(user.getPassword()+user.getUsername());
+					}
+				}
+				
+			}
+			
+			@Override
+			public void onError(int arg0, String arg1) {
+				// TODO Auto-generated method stub
+				DisplayToast("fail!");
+			}
+		});
+	}*/
+	public void DisplayToast(String str){
+		Toast toast = Toast.makeText(this, str, Toast.LENGTH_LONG);
+		toast.setGravity(Gravity.TOP, 0, 220);
+		toast.show();
+	}
+
 	private ArrayList<HuiHua> getHuihua(){
 		ArrayList<HuiHua> hhList = new ArrayList<HuiHua>();
 		HuiHua h1 = new HuiHua();

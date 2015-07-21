@@ -59,6 +59,11 @@
    			android:windowSoftInputMode="adjustPan"
     		android:label="chat" >
         </activity>  
+        
+        <activity
+   			android:name="com.example.isweixin.ShowInFoActivity"
+    		android:label="显示好友的信息" >
+        </activity>  
     </application>
 
     

@@ -20,6 +20,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginActivity extends Activity{
+	EditText m_EditText1;
+	EditText m_EditText2;
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
@@ -27,8 +29,8 @@ public class LoginActivity extends Activity{
 		
 		setContentView(R.layout.activity_login);
 		
-		final EditText m_EditText1 = (EditText)findViewById(R.id.editText1);
-		final EditText m_EditText2 = (EditText)findViewById(R.id.editText2);
+		m_EditText1 = (EditText)findViewById(R.id.editText1);
+		m_EditText2 = (EditText)findViewById(R.id.editText2);
 		
 		Button btn1 = (Button)findViewById(R.id.button1);
 		btn1.setOnClickListener(new View.OnClickListener() {
@@ -85,8 +87,10 @@ public class LoginActivity extends Activity{
 				for(User user:object){
 					if(user.getPassword().toString().equals(password)){
 						Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+						PublicData.username = m_EditText1.getText().toString();
+						
 						startActivity(intent);
-						finish();
+					//	finish();
 					//	DisplayToast(user.getPassword()+user.getUsername());
 					}
 				}

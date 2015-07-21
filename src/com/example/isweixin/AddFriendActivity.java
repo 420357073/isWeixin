@@ -31,7 +31,7 @@ public class AddFriendActivity extends Activity{
 	private ListView m_ListView;
 	//private List<User> users;
 	List<Map<String, String>> ListItems;
-	 BaseAdapter adapter;
+	 AddFriendAdapter adapter;
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_addfriend);
@@ -39,11 +39,7 @@ public class AddFriendActivity extends Activity{
 		et_username = (EditText)findViewById(R.id.et_find_name);
 		
 		ListItems = new ArrayList<Map<String, String>>();
-		adapter = new SimpleAdapter(this,
-				ListItems,
-				R.layout.listitemlayout,
-				new String[] {"name"},
-				new int[] {R.id.name});
+		adapter = new AddFriendAdapter(this, ListItems);
 		m_ListView = (ListView)findViewById(R.id.listView1);
 		m_ListView.setAdapter(adapter);
 		
@@ -85,7 +81,7 @@ public class AddFriendActivity extends Activity{
 				public void onSuccess(List<User> object) {
 					// TODO Auto-generated method stub
 					for(User user:object){
-						DisplayToast(user.getUsername());
+					//	DisplayToast(user.getUsername());
 						
 						Map<String, String> item = new HashMap<String, String>();
 						item.put("name", user.getUsername());
